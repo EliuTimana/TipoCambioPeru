@@ -1,0 +1,29 @@
+{
+  "name": "eliu-timana/tipo-cambio-peru",
+  "description": "Librer\u0000a PHP para obtener el tipo de cambio de SUNAT - Perú",
+  "type": "library",
+  "keywords": [
+    "sunat",
+    "tipo cambio",
+    "peru"
+  ],
+  "require-dev": {
+    "phpunit/phpunit": "^7.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Eliu Timana",
+      "email": "EliuTimana@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=5.5.9"
+  },
+  "autoload": {
+    "psr-4": {
+      "EliuTimana\\TipoCambioPeru\\": "src/"
+    }
+  }
+}
