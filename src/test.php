@@ -29,6 +29,6 @@ if (!empty($content)) {
 }*/
 
 $tipocambio = new \EliuTimana\TipoCambioPeru\TipoCambio();
-$tipocambio->getCambioMes(1);
-$tipocambio->getCambioFecha(new DateTime());
-$tipocambio->getCambioHoy();
+print_r($tipocambio->getCambioMes());
+print_r($tipocambio->getCambioFecha(new DateTime('2017-08-06'), true));
+print_r($tipocambio->getCambioHoy());

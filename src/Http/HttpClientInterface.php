@@ -9,31 +9,22 @@
 
 namespace EliuTimana\TipoCambioPeru\Http;
 
-use DOMNodeList;
+use EliuTimana\TipoCambioPeru\Entity\TipoCambioCollection;
 use EliuTimana\TipoCambioPeru\Entity\TipoCambioDia;
 
 interface HttpClientInterface
 {
-    public function getDataMes();
+    /**
+     * @param $mes
+     *
+     * @return TipoCambioCollection|null
+     */
+    public function getDataMes($mes);
 
     /**
-     * @return TipoCambioDia[]
+     * @param \DateTime $date
      *
-     * @throws \Exception
+     * @return TipoCambioDia|null
      */
-    public function getHtmlContent();
-
-    /**
-     * @param DOMNodeList $rows
-     *
-     * @return TipoCambioDia[]
-     */
-    public function parseTableRows(DOMNodeList $rows);
-
-    /**
-     * @param DOMNodeList $columns
-     *
-     * @return TipoCambioDia[] Grupo de Dias de la fila
-     */
-    public function parseColumnGroup(DOMNodeList $columns);
+    public function getDataFecha(\DateTime $date);
 }

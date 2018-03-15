@@ -20,28 +20,110 @@ use EliuTimana\TipoCambioPeru\Entity\TipoCambioDia;
  */
 class HttpClient implements HttpClientInterface
 {
-    const URL = 'http://e-consulta.sunat.gob.pe/cl-at-ittipcam/tcS01Alias?mes=03&anho=1500';
     private $data;
+    private $url = 'http://e-consulta.sunat.gob.pe/cl-at-ittipcam/tcS01Alias';
+    private $mes;
+    private $anio;
+
+    /**
+     * @return mixed
+     */
+    public function getMes()
+    {
+        return $this->mes;
+    }
+
+    /**
+     * @param mixed $mes
+     */
+    public function setMes($mes)
+    {
+        $this->mes = $mes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAnio()
+    {
+        return $this->anio;
+    }
+
+    /**
+     * @param mixed $anio
+     */
+    public function setAnio($anio)
+    {
+        $this->anio = $anio;
+    }
 
     public function __construct()
     {
+        $this->fecha = new \DateTime();
         try {
             $this->data = $this->getHtmlContent();
         } catch (\Exception $e) {
         }
     }
 
-    public function getDataMes()
+    public function getDataMes($mes = null)
     {
-        return $this->data;
+        if ($mes) {
+            try {
+                return $this->getHtmlContent($mes, date('Y'));
+            } catch (\Exception $e) {
+                echo $e->getMessage();
+            }
+        }
+        try {
+            return $this->getHtmlContent();
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+
+        return null;
+    }
+
+    public function getDataFecha(\DateTime $date, $previo = false)
+    {
+        $dia = $date->format('d');
+        $mes = $date->format('m');
+        $anio = $date->format('Y');
+
+        try {
+            $data = $this->getHtmlContent($mes, $anio);
+        } catch (\Exception $e) {
+            echo $e->getMessage();
+        }
+
+        if ($data) {
+            $diaPrevio = null;
+            $diaActual = null;
+
+            foreach ($data->getAll() as $tipoCambioDia) {
+                if ($tipoCambioDia->getDia() == $dia) {
+                    $diaActual = $tipoCambioDia;
+                } elseif ($tipoCambioDia->getDia() < $dia) {
+                    $diaPrevio = $tipoCambioDia;
+                }
+            }
+
+            if (!$diaActual && $previo) {
+                return $diaPrevio;
+            }
+
+            return $diaActual;
+        }
+
+        return null;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getHtmlContent()
+    private function getHtmlContent($mes = null, $anio = null)
     {
-        $content = file_get_contents(HttpClient::URL);
+        $content = file_get_contents($this->buildUrl($mes, $anio));
 
         if (!$content) {
             throw new \Exception('Error al obtener los datos del servidor');
@@ -62,7 +144,7 @@ class HttpClient implements HttpClientInterface
     /**
      * {@inheritdoc}
      */
-    public function parseTableRows(DOMNodeList $rows)
+    private function parseTableRows(DOMNodeList $rows)
     {
         $data = new TipoCambioCollection();
 
@@ -82,12 +164,12 @@ class HttpClient implements HttpClientInterface
     /**
      * {@inheritdoc}
      */
-    public function parseColumnGroup(DOMNodeList $columns)
+    private function parseColumnGroup(DOMNodeList $columns)
     {
         $data = new TipoCambioCollection();
         //Día  Compra  Venta  | Día  Compra   Venta | Día  Compra   Venta | Día  Compra Venta
-        //1	   3.259   3.261  | 2	 3.262    3.265 | 3	   3.257    3.259 | 6	 3.249  3.250
-        //7	   3.250   3.252  | 8	 3.253    3.257 | 9	   3.254    3.256 | 10   3.258  3.260
+        //1	   3.259   3.261  | 2    3.262    3.265 | 3	   3.257    3.259 | 6    3.249  3.250
+        //7	   3.250   3.252  | 8    3.253    3.257 | 9	   3.254    3.256 | 10   3.258  3.260
         //...................................................................................
         if ($columns->length < 3) {
             return $data;
@@ -106,5 +188,21 @@ class HttpClient implements HttpClientInterface
         }
 
         return $data;
+    }
+
+    private function buildUrl($mes, $anio)
+    {
+        if ($mes || $anio) {
+            if (!in_array($mes, range(1, 12))) {
+                throw new \InvalidArgumentException('Mes inválido');
+            }
+            if ($anio > date('Y')) {
+                throw new \InvalidArgumentException('El año no debe ser mayor al actual');
+            }
+
+            return $this->url."?mes={$mes}&anho={$anio}";
+        }
+
+        return $this->url;
     }
 }

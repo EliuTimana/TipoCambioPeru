@@ -9,6 +9,7 @@
 namespace EliuTimana\TipoCambioPeru;
 
 use EliuTimana\TipoCambioPeru\Entity\TipoCambioCollection;
+use EliuTimana\TipoCambioPeru\Entity\TipoCambioDia;
 use EliuTimana\TipoCambioPeru\Http\HttpClient;
 
 /**
@@ -30,7 +31,7 @@ class TipoCambio implements TipoCambioInterface
      */
     public function getCambioHoy()
     {
-        return new \stdClass();
+        return $this->client->getDataFecha(new \DateTime(), true);
     }
 
     /**
@@ -38,22 +39,22 @@ class TipoCambio implements TipoCambioInterface
      */
     public function getCambioMes($mes = null)
     {
-        return $this->dataMes;
+        return $this->client->getDataMes($mes);
     }
 
     /**
      * @param \DateTime $fecha
      *
-     * @return \stdClass
+     * @return TipoCambioDia
      *
      * @throws \Exception
      */
-    public function getCambioFecha(\DateTime $fecha)
+    public function getCambioFecha(\DateTime $fecha, $previo = false)
     {
         if ($fecha > new \DateTime()) {
             throw new \Exception('La fecha no puede ser mayor a hoy');
         }
 
-        return new \stdClass();
+        return $this->client->getDataFecha($fecha, $previo);
     }
 }
