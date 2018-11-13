@@ -9,6 +9,6 @@ require '../vendor/autoload.php';
  */
 
 $tipocambio = new \EliuTimana\TipoCambioPeru\TipoCambio();
-print_r($tipocambio->getCambioMes());
-print_r($tipocambio->getCambioFecha(new DateTime('2017-08-06'), true));
-print_r($tipocambio->getCambioHoy());
+echo $tipocambio->getCambioMes();
+echo $tipocambio->getCambioFecha(new DateTime('2017-08-06'), true);
+echo $tipocambio->getCambioHoy();
