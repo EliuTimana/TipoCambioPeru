@@ -19,7 +19,9 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": ">=5.5.9"
+    "php": ">=5.5.9",
+    "symfony/yaml": "^4.3@dev",
+    "symfony/css-selector": "^4.3@dev"
   },
   "autoload": {
     "psr-4": {

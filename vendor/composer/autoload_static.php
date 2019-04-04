@@ -8,6 +8,7 @@ class ComposerStaticInitd1c5b24e612d0bcb138fd86e4517ba75
 {
     public static $files = array (
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -18,6 +19,12 @@ class ComposerStaticInitd1c5b24e612d0bcb138fd86e4517ba75
         'W' => 
         array (
             'Webmozart\\Assert\\' => 17,
+        ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Symfony\\Component\\Yaml\\' => 23,
+            'Symfony\\Component\\CssSelector\\' => 30,
         ),
         'E' => 
         array (
@@ -40,6 +47,18 @@ class ComposerStaticInitd1c5b24e612d0bcb138fd86e4517ba75
         'Webmozart\\Assert\\' => 
         array (
             0 => __DIR__ . '/..' . '/webmozart/assert/src',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Symfony\\Component\\Yaml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
+        'Symfony\\Component\\CssSelector\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/css-selector',
         ),
         'EliuTimana\\TipoCambioPeru\\' => 
         array (
