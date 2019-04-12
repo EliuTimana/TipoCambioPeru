@@ -21,7 +21,8 @@
   "require": {
     "php": ">=5.5.9",
     "symfony/yaml": "^4.3@dev",
-    "symfony/css-selector": "^4.3@dev"
+    "symfony/css-selector": "^4.3@dev",
+    "phpoffice/phpexcel": "dev-master"
   },
   "autoload": {
     "psr-4": {

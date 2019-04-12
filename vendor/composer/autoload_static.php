@@ -81,6 +81,10 @@ class ComposerStaticInitd1c5b24e612d0bcb138fd86e4517ba75
             array (
                 0 => __DIR__ . '/..' . '/phpspec/prophecy/src',
             ),
+            'PHPExcel' => 
+            array (
+                0 => __DIR__ . '/..' . '/phpoffice/phpexcel/Classes',
+            ),
         ),
     );
 
