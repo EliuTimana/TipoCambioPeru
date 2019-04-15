@@ -22,7 +22,8 @@
     "php": ">=5.5.9",
     "symfony/yaml": "^4.3@dev",
     "symfony/css-selector": "^4.3@dev",
-    "phpoffice/phpexcel": "dev-master"
+    "phpoffice/phpexcel": "dev-master",
+    "spipu/html2pdf": "dev-master"
   },
   "autoload": {
     "psr-4": {
