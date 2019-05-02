@@ -19,7 +19,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": ">=5.5.9",
+    "php": "^7.2",
     "symfony/css-selector": "^4.3@dev",
     "phpoffice/phpexcel": "dev-master",
     "spipu/html2pdf": "dev-master",
@@ -29,7 +29,15 @@
     "psr/log": "^1.1@dev",
     "symfony/console": "^4.3@dev",
     "symfony/finder": "^4.3@dev",
-    "cypro/php-webpage-generator": "dev-master"
+    "cypro/php-webpage-generator": "dev-master",
+    "doctrine/instantiator": "^1.2@dev",
+    "monolog/monolog": "^2.0@dev",
+    "guzzlehttp/guzzle": "^6.3@dev",
+    "psr/container": "^1.0@dev",
+    "webmozart/assert": "^1.3@dev",
+    "doctrine/lexer": "^1.0@dev",
+    "sebastian/environment": "^4.2@dev",
+    "symfony/http-foundation": "^4.3@dev"
   },
   "autoload": {
     "psr-4": {
