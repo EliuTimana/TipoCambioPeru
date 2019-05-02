@@ -24,7 +24,12 @@
     "phpoffice/phpexcel": "dev-master",
     "spipu/html2pdf": "dev-master",
     "select2/select2": "dev-master",
-    "doctrine/data-fixtures": "^1.3@dev"
+    "doctrine/data-fixtures": "^1.3@dev",
+    "fullcalendar/fullcalendar": "^4.0@alpha",
+    "psr/log": "^1.1@dev",
+    "symfony/console": "^4.3@dev",
+    "symfony/finder": "^4.3@dev",
+    "cypro/php-webpage-generator": "dev-master"
   },
   "autoload": {
     "psr-4": {
