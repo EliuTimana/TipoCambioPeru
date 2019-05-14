@@ -34,6 +34,8 @@
     "guzzlehttp/guzzle": "^6.3@dev",
     "psr/container": "^1.0@dev",
     "webmozart/assert": "^1.3@dev",
+    "doctrine/lexer": "^1.0@dev",
+    "sebastian/environment": "^4.2@dev",
     "symfony/http-foundation": "^4.3@dev",
     "gabrielbull/paypal": "dev-master"
   },
