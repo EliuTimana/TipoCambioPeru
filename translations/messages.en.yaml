@@ -1,0 +1,128 @@
+generic:
+  or: or
+  by: by
+
+navbar:
+  login: Log in
+  signin: Sign in
+  profile: Profile
+  logout: Logout
+  dashboard: Dashboard
+  notification:
+      no-notification: No notification
+      article_created: published a new article
+
+home:
+  read_more: Read more
+  no_article: No article :(
+
+article:
+  comment: Comment
+  comments: Comments
+  not_authenticate: You must be login to leave a comment
+  login: Log in
+  signin: Sign in
+  form:
+    post_comment: Leave a comment
+    comment_placeholder: Leave a public comment..
+
+login:
+  login: Log in
+  login_with: Log in with
+  forgot_password: Forgot password ?
+  not_registered: Not registered ?
+  create_account: Create an account
+  form:
+    username: Username
+    password: Password
+    submitted: Log in...
+  flashmessage_success: You are now log in
+
+
+"Username could not be found.": User or password could not be found
+
+signin:
+  signin: Sign in
+  signin_with: Sign in with
+  form:
+    username: Username
+    email: Email
+    password: Password
+    password_placeholder: strong password
+    repeat_password: Repeat it
+    repeat_password_placeholder: once again
+    submitted: Sign in...
+  flashmessage_success: Your account has been created. You can now log in
+
+
+forgot_password:
+  forgot_password: Forgot password
+  instruction: Fill in the field with you email account to get a reset link
+  send: Send email
+  submitted: Send...
+  flashmessage_success: An email has been sent to this email address
+
+reset_password:
+  reset_password: Reset password
+  form:
+    new_password: New password
+    new_password_placeholder: strong password
+    repeat_password: Repeat the new password
+    repeat_password_placeholder: once again
+    submit: Save
+    submitted: Save in progress...
+  flashmessage_success: Password has been reseted !
+  flashmessage_token_expired: Token is expired. Get a new password request
+
+profile:
+  sidebar:
+    profile: Profile
+    security: Security
+    my_profile: My profile
+    edit_profile: Edit my profile
+    change_password: Change my password
+  last_comments: Last comments
+  badges: My badges
+
+backoffice:
+  sidebar:
+    dashboard: DASHBOARD
+    articles: ARTICLES
+  dashboard:
+    article: Article
+    articles: Articles
+    comment: Comment
+    comments: Comments
+    user: User
+    users: Users
+  articles:
+    list:
+      title: THE ARTICLES
+      new_article: New article
+      article_title: Title
+      article_author: Author
+      article_posted_at: Posted at
+      article_comment: Comments
+      articlr_action: Actions
+      no_article: No article
+      deleted_confirm: Do you want to delete this article ?
+    add:
+      title: ADD ARTICLE
+    edit:
+      title: EDIT ARTICLE
+      cover_image: Cover image
+      delete_cover_image: Delete image
+      delete_cover_image_confirm: Do you want to delete this image ?
+      no_cover_image: No cover image
+    add_edit_form:
+      actuality: Actuality
+      article_title: Title
+      article_content: Content
+      article_tags: Tags
+      article_tags_helper: Split your tags with a comma
+      article_media: Media
+      submit_button: Publish
+    flashmessage_publish: The article has been successfully created
+    flashmessage_edit: The article has been successfully edited
+    flashmessage_deleted_article: The article has been successfully deleted
+
