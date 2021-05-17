@@ -19,7 +19,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": "^7.2",
+    "php": "^7.4",
     "symfony/css-selector": "^4.3@dev"
   },
   "autoload": {
