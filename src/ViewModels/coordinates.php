@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Eliu
- * Date: 03/14/2018
- * Time: 16:11.
- */
 
 namespace EliuTimana\TipoCambioPeru\Entity;
 
@@ -82,5 +76,29 @@ class TipoCambioDia
         $this->venta = $venta;
 
         return $this;
+    }
+
+    /**
+     * @return TipoCambioCollection
+     */
+    public function getCambioMes($mes = null)
+    {
+        return $this->client->getDataMes($mes);
+    }
+
+    /**
+     * @param \DateTime $fecha
+     *
+     * @return TipoCambioDia
+     *
+     * @throws \Exception
+     */
+    public function getCambioFecha(\DateTime $fecha, $previo = false)
+    {
+        if ($fecha > new \DateTime()) {
+            throw new \Exception('La fecha no puede ser mayor a hoy');
+        }
+
+        return $this->client->getDataFecha($fecha, $previo);
     }
 }
