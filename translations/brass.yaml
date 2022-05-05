@@ -1,0 +1,12 @@
+reset_password:
+  title: Demande reinitialisation de mot de passe
+
+navbar:
+  login: Connexion
+  signin: Inscription
+  profile: Profil
+  logout: Déconnexion
+  dashboard: Tableau de bord
+  notification:
+      no-notification: Aucune notification
+      article_created: a publié un nouvel article
