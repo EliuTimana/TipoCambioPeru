@@ -25,6 +25,17 @@ if (!$result) {
 echo json_encode($result);
 ```
 
+## Result (json)
+```json
+{
+  "rate": 3.751,
+  "sunat": 3.76,
+  "bcp": 3.842,
+  "interbank": 3.7495,
+  "bn": 3.810
+}
+```
+
 ### Requerimientos
 - PHP 7.1 o superior.
 - Extensión `curl`
