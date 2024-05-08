@@ -2,9 +2,9 @@
 Librería para obtener el tipo de cambio de SUNAT - Perú
 
 ## Instalación
-Usando composer desde [packagist.org](https://packagist.org/packages/EliuTimana/TipoCambioPeru)
+Usando composer desde [packagist.org](https://packagist.org/packages/eliu-timana/tipo-cambio-peru)
 ```bash
-composer require EliuTimana/TipoCambioPeru
+composer require eliu-timana/tipo-cambio-peru
 ```
 ### Requerimientos
 - PHP 7.1 o superior.
