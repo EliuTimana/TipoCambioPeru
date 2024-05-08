@@ -1,6 +1,15 @@
 # TipoCambioPeru
 Librería para obtener el tipo de cambio de SUNAT - Perú
 
+## De donde se obtienen los datos?
+- https://www.sunat.gob.pe
+- https://cuantoestaeldolar.pe
+
+### Servicios Disponibles
+- Consulta de tipo de cambio
+- Consulta de SUNAT
+- Consulta de cuantoestaeldolar.pe
+
 ## Instalación
 Usando composer desde [packagist.org](https://packagist.org/packages/eliu-timana/tipo-cambio-peru)
 ```bash
@@ -40,5 +49,3 @@ echo json_encode($result);
 - PHP 7.1 o superior.
 - Extensión `curl`
 
-### Servicios Disponibles
-- Consulta de tipo de cambio
